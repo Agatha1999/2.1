@@ -34,6 +34,10 @@ a:hover {
 .logo {
   font-size: 24px;
 }
+
+li{
+   margin-right: 55px;
+}
  
 nav {
   display: flex;
