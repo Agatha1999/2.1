@@ -6,7 +6,7 @@
 }
 @font-face {
   font-family: 'FonteTitulo';
-  src: url('font1.ttf') format('truetype');
+  src: url('font1.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -155,7 +155,7 @@ nav {
 }
  
 .descricao {
-  font-family: 'FonteDescricao', serif;
+  font-family: 'FonteDescricao';
   font-size: 2.5vw;
   line-height: 1.5;
   color: #3a2b1c;
