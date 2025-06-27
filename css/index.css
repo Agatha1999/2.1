@@ -34,10 +34,6 @@ a:hover {
 .logo {
   font-size: 24px;
 }
-
-li{
-   margin-right: 55px;
-}
  
 nav {
   display: flex;
@@ -52,7 +48,7 @@ nav {
   list-style: none;
   display: flex;
   gap: 32px;
-  margin: 0;
+  margin: 55px;
   padding: 0;
 }
  
@@ -159,9 +155,9 @@ nav {
   line-height: 1.5;
   color: #3a2b1c;
   font-family: 'FonteDescricao', serif;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   color: #3a2b1c;
-  overflow: hidden;
+  overflow-y: scroll;
  
 }
  
