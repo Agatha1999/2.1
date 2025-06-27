@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'FonteDescricao';
-  src: url('fonts/font2.ttf') format('truetype');
+  src: url('font2.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'FonteTitulo';
-  src: url('fonts/font1.ttf') format('truetype');
+  src: url('font1.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
