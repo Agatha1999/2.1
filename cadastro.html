@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
+    <script type="module" src="js/firebaseauth.js"></script>
+</head>
+<body>
+    <div class="container"> <!-- Inicio do container -->
+
+        <div class="content first-content"> <!--Começo--> <!-- Primeiro Conteudo-->
+
+            <div class="first-column"> <!-- Começo --> <!-- Primeira Coluna-->
+                <h2 class="title title-primary">BEM-VINDO DE VOLTA!</h2> <!-- h2 titulo principal 1 -->
+                <p class="description description-primary">Se você já tiver uma conta clique no botão abaixo</p>  <!-- Descrição-->
+                <button id="signin" class="btn btn-primary">RETORNAR</button> <!-- Botão que volta para o segundo conteudo (parte de login)-->
+            </div> <!-- Fim --> <!-- Primeira Coluna-->    
+
+            <div class="second-column"> <!--Segunda Coluna-->
+                <h2 class="title title-second">CRIE SUA CONTA</h2> <!-- h2 titulo principal 2 -->
+
+                <div class="social-media"> <!-- Começo --> <!-- Cadastrar com rede social-->
+                    <ul class="list-social-media">
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media">
+                                <i class="fab fa-google-plus-g"></i> <!--Icone do google-->
+                            </li>
+                        </a>
+                    </ul>
+                </div><!-- Fim --> <!-- Logar com rede social-->
+
+                <p class="description description-second">Ou utilize seu email para se registrar:</p><!-- Descrição-->
+
+                <form class="form"> <!-- Começo --> <!-- Formulario de cadastro de conta-->
+                    <label class="label-input" for="">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="text" placeholder="Name">
+                    </label><!--Nome-->
+                    
+                    <label class="label-input" for="">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" placeholder="Email">
+                    </label><!--Email-->
+                    
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" placeholder="Password">
+                    </label><!--Senha-->
+                    
+                    
+                    <button class="btn btn-second">Cadastrar</button> <!-- Botão que volta cadastra a conta e entra para a página inicial-->       
+                </form><!-- Fim --> <!-- Formulario de cadastro de conta-->
+
+            </div><!-- second column -->
+
+        </div><!--Fim--> <!-- Primeiro Conteudo-->
+
+        <div class="content second-content"><!--Começo--> <!-- Segundo Conteudo-->
+
+            <div class="first-column margin-direito"><!--Começo--> <!-- Primeira Coluna-->
+
+                <h2 class="title title-primary">OLÁ AMIGOS</h2><!-- h2 titulo principal 1 -->
+
+                <p class="description description-primary">Para se cadastrar clique no botão abaixo </p><!-- Descrição-->
+                <button id="signup" class="btn btn-primary">Iniciar</button><!-- Botão que volta para o segundo conteudo (parte de login)-->
+
+            </div><!--Fim--> <!-- Primeira Coluna-->
+
+            <div class="second-column"><!--Começo--> <!-- Segunda Coluna-->
+
+                <h2 class="title title-second">ENTRE EM SUA CONTA</h2> <!-- h2 titulo principal 2 -->
+
+                <div class="social-media"><!-- Começo --> <!-- Logar com rede social-->
+
+                    <ul class="list-social-media">
+                        <a class="link-social-media" href="#">
+                            <li class="item-social-media">
+                                <i class="fab fa-google-plus-g"></i><!--Google icone-->
+                            </li>
+                        </a>
+                    </ul>
+
+                </div><!-- Fim --> <!-- Logar com rede social-->
+
+                <p class="description description-second">Use seu endereço de email</p><!-- Descrição-->
+
+                <form class="form"><!-- Começo --> <!-- Formulario de conexção de uma conta antiga-->
+                
+                    <label class="label-input" for="">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" placeholder="Email">
+                    </label><!--Email-->
+                
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" placeholder="Password">
+                    </label><!--Senha-->
+                
+                    <a class="password" href="#">Esqueceu sua senha?</a><!--link esqueceu sua senha-->
+                    <button class="btn btn-second">Entrar</button><!-- Botão que entra em uma conta já existente e entrando para  página inicial-->  
+
+                </form><!-- Fim --> <!-- Formulario de conexção de uma conta antiga-->
+
+            </div><!--Fim--> <!-- Segunda Coluna-->
+
+        </div><!--Fim--> <!-- Segundo Conteudo-->
+
+    </div>  <!-- Fim do container -->
+
+   
+    <script src="js/app.js"></script>
+</body>
+</html>

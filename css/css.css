@@ -1,0 +1,732 @@
+/* style.css */
+/**
+ * Estilos para Página de Login/Cadastro com Transição Animada
+ * 
+ * Este arquivo contém:
+ * - Definições de fontes customizadas
+ * - Estilos gerais e reset
+ * - Estilos específicos para formulários
+ * - Animações para transição entre telas
+ * - Media queries para responsividade
+ * 
+ * @version 1.0
+ * @author [Seu Nome]
+ */
+
+/* ============ FONTES CUSTOMIZADAS ============ */
+/**
+ * @font1 - Usada para títulos
+ * @font2 - Usada para descrições e textos menores
+ */
+@font-face {
+    font-family: 'font1';
+    src: url(font1.otf);
+} /* Titulo */
+
+@font-face {
+    font-family: 'font2';
+    src: url(font2.ttf);
+}/*descrição e subtitulos*/
+
+/* ============ RESET E ESTILOS GLOBAIS ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/**
+ * Estilo base do body
+ * Cor de fundo azul claro
+ */
+body {
+    background-color: #4a3124;
+}
+
+/* ============ CONTAINER PRINCIPAL ============ */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/**
+ * Card principal que contém ambos formulários
+ * Possui:
+ * - Fundo bege
+ * - Borda arredondada
+ * - Divisão colorida no lado esquerdo (via pseudo-elemento)
+ */
+.content {
+    position: relative; /* Garante que os filhos absolutos se refiram a este container */
+    background-color: #e0c8b1;
+    border-radius: 15px;
+    width: 960px;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/**
+ * Divisão colorida azul no lado esquerdo
+ * Será animada durante a transição entre formulários
+ */
+.content::before {
+    content: "";
+    position: absolute;
+    background-color: #103a71;
+    width: 50%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    left: 0;
+    pointer-events: none;
+}
+
+/* ============ ESTILOS DE TEXTO ============ */
+.title {
+    font-family: 'font1';
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.title-primary {
+    color: #e0c8b1; /* Texto claro para fundo escuro */
+}
+
+.title-second {
+    color: #4a3124; /* Texto escuro para fundo claro */
+}
+
+.description {
+    font-family: 'font2';
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+.description-primary {
+    color: #e0c8b1;
+}
+
+.description-second {
+    color: #4a3124;
+}
+
+/* ============ BOTÕES ============ */
+.btn {
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'font2';
+    font-size: 15px;
+    padding: 10px 48px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+}
+
+/**
+ * Botão primário - usado no fundo azul
+ * Estilo outline com transição suave
+ */
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid #e0c8b1;
+    color: #e0c8b1;
+    transition: background-color .5s;
+}
+
+.btn-primary:hover {
+    background-color: #e0c8b1;
+    color: #103a71;
+}
+
+/**
+ * Botão secundário - usado no fundo bege
+ * Estilo sólido com transição suave
+ */
+.btn-second {
+    background-color: #e0c8b1;
+    border: 1px solid #4a3124;
+    transition: background-color .5s;
+    color: #4a3124;
+}
+
+.btn-second:hover {
+    background-color: #4a3124;
+    border: 1px solid #e0c8b1;
+    color: #e0c8b1;
+}
+
+/* ============ LAYOUT DOS FORMULÁRIOS ============ */
+.first-content {
+    display: flex;
+}
+
+.first-content .second-column {
+    z-index: 11;
+}
+
+.first-column {
+    text-align: center;
+    width: 40%;
+    z-index: 10;
+    margin-left: 7%;
+}
+.margin-direito{
+    margin-right: 7%;
+}
+
+.second-column {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: px;
+}
+
+/* ============ REDES SOCIAIS ============ */
+.social-media {
+    margin: 1rem 0;
+}
+
+.link-social-media:not(:first-child){
+    margin-left: 10px;
+}
+
+.link-social-media .item-social-media {
+    transition: background-color .5s;
+}
+
+.link-social-media:hover .item-social-media{
+    background-color: #4a3124;
+    color: #e0c8b1;
+    border-color: #4a3124;
+}
+
+.list-social-media {
+    display: flex;
+    list-style-type: none;
+}
+
+.item-social-media {
+    color: #4a3124;
+    border: 1px solid #4a3124;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+/* ============ FORMULÁRIOS ============ */
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+}
+
+.form input {
+    height: 45px;
+    width: 80%;
+    border: none;
+    outline: none;
+    background-color: #fff6eb;
+    border-radius: 15px;
+    font-family: 'font2';
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+/* Estilos específicos para o formulário de login */
+.form-group {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.label-input {
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.input-hint {
+    font-family: 'font2';
+    font-size: 0.8rem;
+    color: #5a5a5a;
+    text-align: left;
+    width: 80%;
+    margin: 0.25rem auto 0;
+    padding: 0 1rem;
+}
+
+.forgot-password {
+    display: block;
+    color: #103a71;
+    font-family: 'font2';
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 1rem 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #0a2a52;
+    text-decoration: underline;
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.btn.btn-second {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+}
+
+.btn-icon {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover .btn-icon {
+    transform: translateX(3px);
+}
+
+/**
+ * Correção para autopreenchimento do navegador
+ * Mantém o estilo consistente quando campos são preenchidos automaticamente
+ */
+input:-webkit-autofill 
+{    
+    -webkit-box-shadow: 0 0 0px 1000px #ecf0f1 inset !important;
+    -webkit-text-fill-color: #000 !important;
+}
+
+.label-input {
+    background-color: #fff6eb;
+    display: flex;
+    align-items: center;
+    margin: 8px;
+    border-radius: 15px;
+    width: 80%; /* Reduz para 80% da largura do container pai (.form) */
+    max-width: 350px; /* Define uma largura máxima (opcional) */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto;
+}
+
+.label-input:hover{
+    border: #4a3124 solid 2.5px;
+}
+
+.icon-modify {
+    color: #4a3124;
+    padding: 0 5px;
+}
+
+/* ============ SEGUNDO FORMULÁRIO (CADASTRO) ============ */
+.second-content {
+    position: absolute;
+    display: flex;
+}
+
+.second-content .first-column {
+    order: 2;
+    z-index: -1;
+}
+
+.second-content .second-column {
+    order: 1;
+    z-index: -1;
+}
+
+.password {
+    color: #34495e;
+    font-size: 14px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.password::first-letter {
+    text-transform: capitalize;
+}
+
+
+/* Botão centralizado */
+.first-column .btn {
+    margin-top: 10px;
+}
+
+/* ============ ANIMAÇÕES E TRANSIÇÕES ============ */
+/**
+ * Estilos aplicados quando o formulário de login está ativo
+ * Controla:
+ * - Posição da divisão colorida (direita)
+ * - Ordem z-index dos elementos
+ * - Animações relacionadas
+ */
+.sign-in-js .first-content .first-column {
+    z-index: -1;
+}
+
+.sign-in-js .second-content .second-column {
+    z-index: 11;
+}
+
+.sign-in-js .second-content .first-column {
+    z-index: 13;
+}
+
+.sign-in-js .content::before {
+    left: 50%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    animation: slidein 1.3s;
+    z-index: 12;
+}
+
+/**
+ * Estilos aplicados quando o formulário de cadastro está ativo
+ */
+.sign-up-js .content::before {
+    animation: slideout 1.3s;
+    z-index: 12;
+}
+
+.sign-up-js .second-content .first-column,
+.sign-up-js .second-content .second-column {
+    z-index: -1;
+}
+
+.sign-up-js .first-content .second-column {
+    z-index: 11;
+}
+
+.sign-up-js .first-content .first-column {
+    z-index: 13;    
+}
+
+/* DESLOCAMENTO CONTEÚDO ATRÁS DO CONTENT:BEFORE*/
+.sign-in-js .first-content .second-column {
+
+    z-index: -1;
+    position: relative;
+    animation: deslocamentoEsq 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+}
+
+.sign-up-js .second-content .second-column {
+    position: relative;
+    z-index: -1;
+    animation: deslocamentoDir 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+}
+
+/* Garante que as colunas ficarão invisíveis durante a transição */
+.sign-in-js .first-content .first-column,
+.sign-up-js .second-content .first-column {
+    animation: hideContent 0.3s forwards;
+}
+
+@keyframes hideContent {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+/* Restaura a visibilidade quando a transição termina */
+.sign-up-js .first-content .first-column,
+.sign-in-js .second-content .first-column {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s 0.4s, visibility 0.3s 0.4s;
+}
+
+/* Ajuste nas animações existentes */
+.sign-in-js .first-content .second-column,
+.sign-up-js .second-content .second-column {
+    animation: fadeOut 0.3s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+/*ANIMAÇÃOO CSS PARA O CONTEÚDO*/
+
+@keyframes deslocamentoEsq {
+
+    from {
+        left: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+
+    25% {
+        left: -80px;
+        opacity: .5;
+        /* z-index: 12; NÃO HÁ NECESSIDADE */
+    }
+
+    50% {
+        left: -100px;
+        opacity: .2;
+        /* z-index: 12; NÃO HÁ NECESSIDADE */
+    }
+
+    to {
+        left: -110px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+
+@keyframes deslocamentoDir {
+
+    from {
+        left: 0;
+        z-index: 12;
+    }
+
+    25% {
+        left: 80px;
+        /* z-index: 12;  NÃO HÁ NECESSIDADE*/
+    }
+
+    50% {
+        left: 100px;
+        /* z-index: 12; NÃO HÁ NECESSIDADE*/
+        /* background-color: yellow;  Exemplo que dei no vídeo*/
+    }
+
+    to {
+        left: 110px;
+        z-index: -1;
+    }
+}
+
+
+/* ANIMAÇÕES PARA DESKTOP */
+@keyframes slidein {
+    from {
+        left: 0;
+        width: 50%;
+    }
+    25% {
+        left: 5%;
+        width: 50%;
+    }
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+    75% {
+        left: 45%;
+        width: 50%;
+    }
+    to {
+        left: 50%;
+        width: 50%;
+    }
+}
+
+@keyframes slideout {
+    from {
+        left: 50%;
+        width: 50%;
+    }
+    25% {
+        left: 45%;
+        width: 50%;
+    }
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+    75% {
+        left: 5%;
+        width: 50%;
+    }
+    to {
+        left: 0;
+        width: 50%;
+    }
+}
+
+/*VERSÃO MOBILE*/
+@media screen and (max-width: 1040px) {
+    .content {
+        width: 100%;
+        height: 100%;
+    }
+
+    .content::before {
+        width: 100%;
+        height: 40%;
+        top: 0;
+        border-radius: 0;
+    }
+    .first-content, .second-content {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .first-column, .second-column {
+        width: 100%;
+    }
+    
+    .sign-in-js .content::before {
+        top: 60%;
+        left: 0;
+        border-radius: 0;
+
+    }
+
+    .form {
+        width: 90%;
+    }
+    
+    /* ANIMAÇÃO MOBILE CSS*/
+
+    @keyframes deslocamentoEsq {
+
+        from {
+            top: 0;
+            opacity: 1;
+            z-index: 12;
+        }
+    
+        25% {
+            top: -80px;
+            opacity: .5;
+            /* z-index: 12; NÃO HÁ NECESSIDADE */
+        }
+    
+        50% {
+            top: -100px;
+            opacity: .2;
+            /* z-index: 12; NÃO HÁ NECESSIDADE */
+        }
+    
+        to {
+            top: -110px;
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+    
+    
+    @keyframes deslocamentoDir {
+    
+        from {
+            top: 0;
+            z-index: 12;
+        }
+    
+        25% {
+            top: 80px;
+            /* z-index: 12;  NÃO HÁ NECESSIDADE*/
+        }
+    
+        50% {
+            top: 100px;
+            /* z-index: 12; NÃO HÁ NECESSIDADE*/
+            /* background-color: yellow;  Exemplo que dei no vídeo*/
+        }
+    
+        to {
+            top: 110px;
+            z-index: -1;
+        }
+    }
+    
+    
+    
+    @keyframes slidein {
+    
+        from {
+            top: 0;
+            height: 40%;
+        }
+    
+        25% {
+            top: 5%;
+            height: 50%;
+        }
+    
+        50% {
+            top: 25%;
+            height: 60%;
+        }
+    
+        75% {
+            top: 45%;
+            height: 50%;
+        }
+    
+        to {
+            top: 60%;
+            height: 40%;
+        }
+    }
+    
+    @keyframes slideout {
+    
+        from {
+            top: 60%;
+            height: 40%;
+        }
+    
+        25% {
+            top: 45%;
+            height: 50%;
+        }
+    
+        50% {
+            top: 25%;
+            height: 60%;
+        }
+    
+        75% {
+            top: 5%;
+            height: 50%;
+        }
+    
+        to {
+            top: 0;
+            height: 40%;
+        }
+    }
+   
+}
+
+@media screen and (max-width: 740px) {
+    .form {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .form {
+        width: 100%;
+    }
+}
+

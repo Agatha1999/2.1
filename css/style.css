@@ -1,0 +1,358 @@
+@font-face {
+    font-family: 'Logo-Fonte';
+    src: url('font1.otf');
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Logo-Fonte';
+}
+
+body {
+    background-color: #fff6eb;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #103A71;
+    height: 8vh;
+}
+
+.instrucoes{
+    list-style: none;
+}
+
+main {
+    background: url("bg.jpg") no-repeat center center;
+    background-size: cover;
+    flex: 1 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.lista-nav {
+    list-style: none;
+    display: flex;
+}
+
+.lista-nav li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.menu-mobile {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-mobile div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .lista-nav {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background-color: #103A71;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .lista-nav li {
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+}
+
+.lista-nav.ativa {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.menu-mobile.ativa .linha1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.menu-mobile.ativa .linha2 {
+    opacity: 0;
+}
+
+.menu-mobile.ativa .linha3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+.botao-upload {
+    background-image: url(images/upload.jpg);
+    background-size: cover;
+    background-position: center;
+    color: rgba(255, 255, 255, 0);
+    padding: 5%;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    width: 145px;
+    height: 115px;
+}
+
+.botao-camera {
+    background-image: url(images/camera.jpg);
+    background-size: cover;
+    background-position: center;
+    color: rgba(255, 255, 255, 0);
+    padding: 5%;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    width: 180px;
+    height: 150px;
+}
+
+.imagens-diagnostico{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 20px 0;
+}
+
+.botao-upload:hover {
+    filter: brightness(90%);
+    transition: filter 0.3s ease;
+}
+.botao-camera:hover {
+    filter: brightness(90%);
+    transition: filter 0.3s ease;
+}
+
+.left{
+    background-color: #e0c8b1;
+    width: 30%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(100vh - 8vh - 60px);
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+
+#historico-diagnosticos {
+    width: 90%;
+    background-color: #9eb9d4;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 0 auto;
+}
+
+.diagnostico-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #FFF6EB;
+    border-radius: 8px;
+    position: relative;
+}
+
+.diagnostico-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.diagnostico-conteudo {
+    flex: 1;
+}
+
+.botao-apagar {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    background-color: #103A71;
+    color: #fff;
+    text-align: center;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.lado-direito, .right {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 30px 0 30px;
+    background: #fff6eb;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+#container-imagem {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 240px;
+    margin-bottom: 30px;
+}
+
+#previsualizacao-imagem, #video-webcam {
+    max-width: 350px;
+    max-height: 350px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    box-shadow: 0 2px 10px rgba(16,58,113,0.10);
+}
+
+#resultado {
+    width: 70%;
+    background: #9eb9d4;
+    border-radius: 10px;
+    padding: 25px 20px;
+    box-shadow: 0 2px 5px rgba(16,58,113,0.10);
+    margin-top: 0;
+    min-height: 80px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+@media (max-width: 999px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .lista-nav {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background-color: #103A71;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .lista-nav li {
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+    
+    .left, .lado-direito, .right {
+        width: 100%;
+        min-width: unset;
+        padding: 20px 0;
+        height: auto;
+    }
+    .left {
+        min-height: unset;
+    }
+    .imagens-diagnostico {
+        gap: 20px;
+    }
+}
+
+.diagnostico{
+    display: flex;
+}
+
+#btn-analisar{
+    background-color: #9eb9d4;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+}
+#btn-fechar{
+    background-color: #9eb9d4;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+}
+
+#camera-botoes{
+    gap: 30px;
+}

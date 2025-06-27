@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dermedia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
+</head>
+<!-- Oiii, estou documentando aqui para vocês não se perderem -->
+<body>
+    <!-- Aqui vocês já sabem né? Cabeçalho-->
+    <header>
+        <nav>
+            <a class="logo" href="#">Dermedia</a>
+            <ul class="lista-nav">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#">Área do Paciente</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="diagnostico">
+    <!-- Eu separei em dois lados, um pro envio de imagem, câmera, instruções e histórico, outro pra imagem e resultado-->
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;" class="left">
+        <!-- Lado esquerdo :3 -->
+        <div style="flex: 1; min-width: 300px;">
+            <h2>Faça upload ou use a câmera</h2>
+            <!-- Aqui são os botões de upload e de câmera-->
+            <div class="imagens-diagnostico">
+            <label for="envio-arquivo" class="botao-upload"></label>
+            <input type="file" id="envio-arquivo" style="display: none;" accept="image/*">
+            <button onclick="iniciarWebcam()" class="botao-camera"></button>
+            </div>
+            <!-- Eu pretendo dar melhores instruções aqui...-->
+            <h3 style="margin-top: 20px;">Instruções</h3>
+            <ul>
+                <li class="instrucoes">Envie uma foto nítida da região com acne</li>
+                <li class="instrucoes">Ou utilize sua webcam com boa iluminação</li>
+                <li class="instrucoes">O diagnóstico aparecerá ao lado</li>
+            </ul>
+             <!-- O histórico de diagnósticos, vai ter uma imagenzinha e opção de apagar, mas pretendo fazer você pode observar melhor os detalhes, etc-->
+            <div id="historico-diagnosticos" style="margin-top: 30px; max-height: 400px; overflow-y: auto; border-top: 2px solid #103A71; padding-top: 20px;">
+                <h3>Histórico de Diagnósticos</h3>
+                <div id="lista-diagnosticos"></div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Lado direito :3 -->
+        <div style="flex: 1; min-width: 300px;">
+            <!-- Aqui você vê a imagem ou a câmera-->
+            <div id="container-imagem">
+                <img id="previsualizacao-imagem" style="max-width: 100%; display: none;">
+                <video id="video-webcam" autoplay playsinline style="display:none; max-width:100%;"></video>
+                <!-- Os resultados, preciso pesquisar a fundo sobre tratamentos...-->
+                 <div id="camera-botoes" style="display: none;">
+                    <button id="btn-analisar">Analisar a imagem</button>
+                    <button id="btn-fechar">Fechar a câmera</button>
+                 </div>
+                <div id="resultado" style="margin-top: 20px;"></div>
+            </div>
+        </section>
+        <!-- Footer temporário -->
+        <footer>
+        <div class="footer-texto">
+            <p>&copy; 2025 Dermedia Bleu. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
