@@ -1,6 +1,12 @@
 @font-face {
   font-family: 'FonteDescricao';
-  src: url('../fonts/font2.ttf') format('truetype');
+  src: url('fonts/font2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FonteTitulo';
+  src: url('fonts/font1.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -17,7 +23,7 @@ body {
 }
  
 h1 {
-  font-family: 'Logo-Fonte', sans-serif;
+  font-family: 'FonteTitulo', sans-serif;
   font-size: 40px;
 }
  
@@ -55,6 +61,7 @@ nav {
 .nav-list li {
   letter-spacing: 3px;
   margin-left: 32px;
+  font-family: 'FonteDescricao';
 }
  
 .login {
