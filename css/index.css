@@ -4,37 +4,37 @@
   font-weight: normal;
   font-style: normal;
 }
-
+ 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+ 
 }
-
+ 
 body {
   background-color: #e0c8b1;
 }
-
+ 
 h1 {
   font-family: 'Logo-Fonte', sans-serif;
   font-size: 40px;
 }
-
+ 
 a {
   color: #fff;
   text-decoration: none;
   transition: 0.3s;
 }
-
+ 
 a:hover {
   opacity: 0.7;
 }
-
+ 
 .logo {
   font-size: 24px;
 }
-
+ 
 nav {
   display: flex;
   justify-content: space-between;
@@ -43,7 +43,7 @@ nav {
   height: 10vh;
   padding: 0 20px;
 }
-
+ 
 .nav-list {
   list-style: none;
   display: flex;
@@ -51,12 +51,12 @@ nav {
   margin: 0;
   padding: 0;
 }
-
+ 
 .nav-list li {
   letter-spacing: 3px;
   margin-left: 32px;
 }
-
+ 
 .login {
   color: #fff;
   font-weight: bold;
@@ -70,12 +70,12 @@ nav {
   text-decoration: none;
   transition: opacity 0.3s;
 }
-
+ 
 /* Hover */
 .nav-list li a.login:hover {
   opacity: 0.7;
 }
-
+ 
 /* No mobile, deixa o login separado embaixo */
 @media (max-width: 768px) {
   .nav-list li a.login {
@@ -86,17 +86,17 @@ nav {
     font-size: 1.2rem;
   }
 }
-
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
 .mobile-menu {
   display: none;
   cursor: pointer;
 }
-
+ 
 .mobile-menu div {
   width: 32px;
   height: 2px;
@@ -104,67 +104,70 @@ nav {
   margin: 8px;
   transition: 0.3s;
 }
-
+ 
 /* Main layout */
 .main-container {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   position: relative;
   z-index: 1;
 }
-
+ 
 .left, .right {
   width: 50%;
   height: 100%;
 }
-
+ 
 .left {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #e0c8b1;
 }
-
+ 
 .right {
   background-color: #e0c8b1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 30px;
+  margin: 0;
 }
-
+ 
 .custom-img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-
+ 
 .titulo {
   font-family: serif;
   font-size: 36px;
   color: #103a71;
   margin-top: 30px;
 }
-
+ 
 .descricao {
   font-family: 'FonteDescricao', serif;
-  font-size: 50px;
-  line-height: 1.8;
-  margin-bottom: 50px;
+  font-size: 2.5vw;
+  line-height: 1.5;
+  color: #3a2b1c;
+  font-family: 'FonteDescricao', serif;
+  margin-bottom: 30px;
   color: #3a2b1c;
   overflow: hidden;
-  
+ 
 }
-
+ 
 /* Responsividade */
 @media (min-width: 768px) {
   .titulo {
     font-size: 28px;
   }
 }
-
+ 
 @media (min-width: 1200px) {
   .titulo {
     font-size: 60px;
@@ -173,36 +176,36 @@ nav {
     font-size: 40px;
   }
 }
-
+ 
 @media (max-width: 768px) {
   body {
     overflow-x: hidden;
   }
-
+ 
   .main-container {
     flex-direction: column;
   }
-
+ 
   .left, .right {
     width: 100%;
     height: 50%;
   }
-
+ 
   .right {
     justify-content: flex-end;
     align-items: center;
     text-align: center;
     padding: 20px;
   }
-
+ 
   .descricao {
-    font-size: 24px;
+    font-size: 30px;
   }
-
+ 
   .titulo {
     font-size: 28px;
   }
-
+ 
   .nav-list {
     position: fixed;
     top: 8vh;
@@ -219,62 +222,64 @@ nav {
     opacity: 0;
     pointer-events: none;
   }
-
+ 
   .nav-list.active {
     transform: translateX(0);
     opacity: 1;
     pointer-events: all;
   }
-
-
+ 
+ 
   .nav-list li {
     margin-left: 0;
     opacity: 0;
   }
-
+ 
   .mobile-menu {
     display: block;
   }
 }
-
+ 
 .nav-list.active {
   transform: translateX(0);
 }
-
+ 
 @media (max-width: 480px) {
   .descricao {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
-
+ 
 /* Menu Animation */
 @keyframes navLinkFade {
   from {
     opacity: 0;
     transform: translateX(50px);
   }
-
+ 
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
-
+ 
 .mobile-menu.active .line1 {
   transform: rotate(-45deg) translate(-8px, 8px);
 }
-
+ 
 .mobile-menu.active .line2 {
   opacity: 0;
 }
-
+ 
 .mobile-menu.active .line3 {
   transform: rotate(45deg) translate(-5px, -7px);
 }
 .left{
   background-size: auto;
 }
-
-  
-
-
+ 
+ 
+ 
+ 
+ 
+ 
